@@ -23,22 +23,30 @@ const Home = () => {
         <main style={{ backgroundColor: 'var(--light-bg)', color: 'var(--text-color)' }}>
             {/* Immersive Hero Section */}
             <section className="hero">
-                <div className="container">
-                    <div
-                        ref={heroRef}
-                        className={`hero-content reveal-fade-up ${heroVisible ? 'reveal-visible' : ''}`}
-                    >
-                        <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '3px', color: 'var(--accent-color)', display: 'block', marginBottom: '15px' }}>
+                <div className="container" ref={heroRef}>
+                    <div className="hero-content">
+                        <span
+                            style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '3px', color: 'var(--accent-color)', display: 'block', marginBottom: '15px' }}
+                            className={`reveal-fade-up delay-100 ${heroVisible ? 'reveal-visible' : ''}`}
+                        >
                             Winter / Spring Campaign 2026
                         </span>
-                        <h1 className="hero-title">
+                        <h1
+                            className={`hero-title reveal-fade-up delay-200 ${heroVisible ? 'reveal-visible' : ''}`}
+                        >
                             Memento Mori<br />Couture
                         </h1>
-                        <div className="hero-accent"></div>
-                        <p className="hero-subtitle">
+                        <div
+                            className={`hero-accent reveal-fade-in delay-300 ${heroVisible ? 'reveal-visible' : ''}`}
+                        ></div>
+                        <p
+                            className={`hero-subtitle reveal-fade-up delay-400 ${heroVisible ? 'reveal-visible' : ''}`}
+                        >
                             TRIBESMAN design house redefines modern luxury styling. Bridging meticulous minimalist geometry with premium raw fabrics sourced across West Africa.
                         </p>
-                        <div className="hero-buttons">
+                        <div
+                            className={`hero-buttons reveal-fade-up delay-500 ${heroVisible ? 'reveal-visible' : ''}`}
+                        >
                             <a href="/catalog" className="btn underline-hover">Explore Archives</a>
                             <a href="/about" className="btn-secondary">The Atelier</a>
                         </div>
