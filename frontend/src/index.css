@@ -195,8 +195,8 @@ a {
 
 @media (max-width: 768px) {
     .logo a {
-        font-size: 1.4rem;
-        letter-spacing: 4px;
+        font-size: 1.3rem;
+        letter-spacing: 3px;
     }
 
     .nav-actions {
@@ -206,8 +206,8 @@ a {
 
 @media (max-width: 480px) {
     .logo a {
-        font-size: 1.1rem;
-        letter-spacing: 2px;
+        font-size: 1.05rem;
+        letter-spacing: 1.5px;
     }
 
     .nav-actions {
@@ -232,9 +232,9 @@ a {
 }
 
 .logo a {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 400;
-    letter-spacing: 8px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--primary-color);
 }
