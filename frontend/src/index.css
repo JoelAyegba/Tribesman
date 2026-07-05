@@ -1192,3 +1192,20 @@ a {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+/* Cinematic clip-path / bounds reveal */
+.reveal-clip-container {
+    overflow: hidden;
+    display: block;
+}
+
+.reveal-clip-text {
+    display: block;
+    transform: translateY(115%);
+    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.reveal-clip-text.reveal-visible {
+    transform: translateY(0);
+}

@@ -25,24 +25,32 @@ const Home = () => {
             <section className="hero">
                 <div className="container" ref={heroRef}>
                     <div className="hero-content">
-                        <span
-                            style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '3px', color: 'var(--accent-color)', display: 'block', marginBottom: '15px' }}
-                            className={`reveal-fade-up delay-100 ${heroVisible ? 'reveal-visible' : ''}`}
-                        >
-                            Winter / Spring Campaign 2026
-                        </span>
-                        <h1
-                            className={`hero-title reveal-fade-up delay-200 ${heroVisible ? 'reveal-visible' : ''}`}
-                        >
-                            Memento Mori<br />Couture
+                        <div className="reveal-clip-container" style={{ marginBottom: '15px' }}>
+                            <span
+                                style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '3px', color: 'var(--accent-color)', display: 'block' }}
+                                className={`reveal-clip-text delay-100 ${heroVisible ? 'reveal-visible' : ''}`}
+                            >
+                                Winter / Spring Campaign 2026
+                            </span>
+                        </div>
+                        <h1 className="hero-title reveal-clip-container" style={{ overflow: 'hidden' }}>
+                            <span
+                                className={`reveal-clip-text delay-200 ${heroVisible ? 'reveal-visible' : ''}`}
+                                style={{ display: 'block', lineHeight: '1.2' }}
+                            >
+                                Memento Mori<br />Couture
+                            </span>
                         </h1>
                         <div
                             className={`hero-accent reveal-fade-in delay-300 ${heroVisible ? 'reveal-visible' : ''}`}
                         ></div>
-                        <p
-                            className={`hero-subtitle reveal-fade-up delay-400 ${heroVisible ? 'reveal-visible' : ''}`}
-                        >
-                            TRIBESMAN design house redefines modern luxury styling. Bridging meticulous minimalist geometry with premium raw fabrics sourced across West Africa.
+                        <p className="hero-subtitle reveal-clip-container">
+                            <span
+                                className={`reveal-clip-text delay-400 ${heroVisible ? 'reveal-visible' : ''}`}
+                                style={{ display: 'block', lineHeight: '1.6' }}
+                            >
+                                TRIBESMAN design house redefines modern luxury styling. Bridging meticulous minimalist geometry with premium raw fabrics sourced across West Africa.
+                            </span>
                         </p>
                         <div
                             className={`hero-buttons reveal-fade-up delay-500 ${heroVisible ? 'reveal-visible' : ''}`}
