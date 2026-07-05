@@ -10,6 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@oxlint/binding-win32-x64-msvc": "^1.72.0",
+    "@rolldown/binding-win32-x64-msvc": "^1.1.4",
+    "@sanity/client": "^7.23.0",
+    "@sanity/image-url": "^1.2.0",
     "axios": "^1.18.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
