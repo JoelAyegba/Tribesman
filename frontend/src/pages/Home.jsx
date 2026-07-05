@@ -1,6 +1,14 @@
 import { useEffect } from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Home = () => {
+    const [heroRef, heroVisible] = useScrollReveal({ threshold: 0.05 });
+    const [heroImgRef, heroImgVisible] = useScrollReveal({ threshold: 0.05 });
+    const [item1Ref, item1Visible] = useScrollReveal();
+    const [item2Ref, item2Visible] = useScrollReveal();
+    const [item3Ref, item3Visible] = useScrollReveal();
+    const [contactRef, contactVisible] = useScrollReveal();
+
     useEffect(() => {
         // Handle smooth scroll for contact section hash
         if (window.location.hash === '#contact') {
@@ -16,7 +24,10 @@ const Home = () => {
             {/* Immersive Hero Section */}
             <section className="hero">
                 <div className="container">
-                    <div className="hero-content">
+                    <div
+                        ref={heroRef}
+                        className={`hero-content reveal-fade-up ${heroVisible ? 'reveal-visible' : ''}`}
+                    >
                         <span style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '3px', color: 'var(--accent-color)', display: 'block', marginBottom: '15px' }}>
                             Winter / Spring Campaign 2026
                         </span>
@@ -28,11 +39,14 @@ const Home = () => {
                             TRIBESMAN design house redefines modern luxury styling. Bridging meticulous minimalist geometry with premium raw fabrics sourced across West Africa.
                         </p>
                         <div className="hero-buttons">
-                            <a href="/catalog" className="btn">Explore Archives</a>
+                            <a href="/catalog" className="btn underline-hover">Explore Archives</a>
                             <a href="/about" className="btn-secondary">The Atelier</a>
                         </div>
                     </div>
-                    <div className="hero-image">
+                    <div
+                        ref={heroImgRef}
+                        className={`hero-image reveal-scale ${heroImgVisible ? 'reveal-visible' : ''}`}
+                    >
                         <img
                             src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
                             alt="Tribesman Collection Cover"
@@ -47,7 +61,10 @@ const Home = () => {
                     <h2 className="section-title">The Editorial Lookbook</h2>
                     <div className="featured-grid">
 
-                        <div className="featured-item">
+                        <div
+                            ref={item1Ref}
+                            className={`featured-item reveal-fade-up delay-100 ${item1Visible ? 'reveal-visible' : ''}`}
+                        >
                             <div className="featured-img">
                                 <img
                                     src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=650"
@@ -63,7 +80,10 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="featured-item">
+                        <div
+                            ref={item2Ref}
+                            className={`featured-item reveal-fade-up delay-200 ${item2Visible ? 'reveal-visible' : ''}`}
+                        >
                             <div className="featured-img">
                                 <img
                                     src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&q=80&w=650"
@@ -79,7 +99,10 @@ const Home = () => {
                             </div>
                         </div>
 
-                        <div className="featured-item">
+                        <div
+                            ref={item3Ref}
+                            className={`featured-item reveal-fade-up delay-300 ${item3Visible ? 'reveal-visible' : ''}`}
+                        >
                             <div className="featured-img">
                                 <img
                                     src="https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&q=80&w=650"
@@ -100,8 +123,8 @@ const Home = () => {
             </section>
 
             {/* Premium Contact Section */}
-            <section id="contact" className="contact">
-                <div className="container">
+            <section id="contact" className="contact" ref={contactRef}>
+                <div className={`container reveal-fade-up ${contactVisible ? 'reveal-visible' : ''}`}>
                     <h2 className="section-title">The Atelier Location</h2>
                     <div className="contact-content">
                         <div className="contact-info">

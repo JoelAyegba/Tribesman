@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { client, urlFor } from '../sanity/client';
 import { mockCategories, mockProducts } from '../data/mockData';
 import { useCart } from '../context/CartContext';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Catalog = () => {
     const [products, setProducts] = useState([]);
@@ -11,6 +12,10 @@ const Catalog = () => {
     const [modalProduct, setModalProduct] = useState(null);
     const [selectedSize, setSelectedSize] = useState('M');
     const { addToCart } = useCart();
+
+    const [headerRef, headerVisible] = useScrollReveal({ threshold: 0.05 });
+    const [filterRef, filterVisible] = useScrollReveal({ threshold: 0.05 });
+    const [gridRef, gridVisible] = useScrollReveal({ threshold: 0.02 });
 
     useEffect(() => {
         fetchData();
@@ -87,7 +92,7 @@ const Catalog = () => {
         <main style={{ backgroundColor: 'var(--light-bg)', color: 'var(--text-color)' }}>
             <section className="page-header" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200')" }}>
                 <div className="container">
-                    <div className="page-header-overlay">
+                    <div ref={headerRef} className={`page-header-overlay reveal-fade-up ${headerVisible ? 'reveal-visible' : ''}`}>
                         <h1>Our Collections</h1>
                         <p>Explore the finest African craftsmanship</p>
                     </div>
@@ -96,7 +101,7 @@ const Catalog = () => {
 
             <section className="catalog">
                 <div className="container">
-                    <div className="category-filter">
+                    <div ref={filterRef} className={`category-filter reveal-fade-in ${filterVisible ? 'reveal-visible' : ''}`}>
                         <button
                             className={`filter-btn ${!selectedCategory ? 'active' : ''}`}
                             onClick={() => setSelectedCategory(null)}
@@ -117,10 +122,19 @@ const Catalog = () => {
                     {loading ? (
                         <div style={{ textAlign: 'center', padding: '50px 0', color: 'var(--medium-text)' }}>Loading collections...</div>
                     ) : (
-                        <div className="catalog-grid">
-                            {filteredProducts.map(product => (
-                                <div key={product.id} className="catalog-item">
-                                    <div className="catalog-img" onClick={() => {
+                        <div ref={gridRef} className="catalog-grid">
+                            {filteredProducts.map((product, index) => (
+                                <div
+                                    key={product.id}
+                                    className="catalog-item reveal-fade-up"
+                                    style={{
+                                        opacity: gridVisible ? 1 : 0,
+                                        transform: gridVisible ? 'translateY(0)' : 'translateY(30px)',
+                                        transition: 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                                        transitionDelay: `${(index % 6) * 100}ms`
+                                    }}
+                                >
+                                    <div className="catalog-img img-container" onClick={() => {
                                         setModalProduct(product);
                                         setSelectedSize('M'); // Reset on details open
                                     }}>
