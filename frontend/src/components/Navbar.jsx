@@ -5,8 +5,6 @@ import './../index.css';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
-    const [isVisible, setIsVisible] = useState(true);
     const { cartCount, setIsCartOpen } = useCart();
     const [theme, setTheme] = useState(() => {
         return localStorage.getItem('theme') || 'dark';
@@ -25,26 +23,9 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY > 100 && currentScrollY > lastScrollY) {
-                // Scrolling down: hide header
-                setIsVisible(false);
-            } else {
-                // Scrolling up: reveal header
-                setIsVisible(true);
-            }
-            setLastScrollY(currentScrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
-
     return (
         <>
-            <header className={`navbar ${!isVisible ? 'navbar-hidden' : ''}`}>
+            <header className="navbar">
                 <div className="container">
                     <div className="logo">
                         <Link to="/">TRIBESMAN</Link>
