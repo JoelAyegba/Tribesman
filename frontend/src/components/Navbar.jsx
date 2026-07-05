@@ -57,42 +57,14 @@ const Navbar = () => {
                         <li><a href="/#contact">Contact</a></li>
                     </ul>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
+                    <div className="nav-actions">
                         {/* Theme Toggle */}
-                        <button
-                            onClick={toggleTheme}
-                            style={{
-                                background: 'transparent',
-                                border: 'none',
-                                color: 'var(--primary-color)',
-                                fontFamily: 'var(--font-sans)',
-                                fontSize: '10px',
-                                letterSpacing: '2.5px',
-                                textTransform: 'uppercase',
-                                cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center'
-                            }}
-                        >
+                        <button onClick={toggleTheme} className="nav-action-btn">
                             {theme === 'light' ? 'Dark' : 'Light'}
                         </button>
 
                         {/* Cart Toggle */}
-                        <button
-                            onClick={() => setIsCartOpen(true)}
-                            style={{
-                                background: 'transparent',
-                                border: 'none',
-                                color: 'var(--primary-color)',
-                                fontFamily: 'var(--font-sans)',
-                                fontSize: '10px',
-                                letterSpacing: '2.5px',
-                                textTransform: 'uppercase',
-                                cursor: 'pointer',
-                                display: 'flex',
-                                alignItems: 'center'
-                            }}
-                        >
+                        <button onClick={() => setIsCartOpen(true)} className="nav-action-btn">
                             Bag <span className="cart-badge">{cartCount}</span>
                         </button>
 

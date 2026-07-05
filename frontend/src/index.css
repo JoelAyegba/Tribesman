@@ -172,6 +172,58 @@ a {
     transform: translateY(-100%);
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    transition: var(--transition);
+}
+
+.nav-action-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+@media (max-width: 768px) {
+    .logo a {
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+    }
+
+    .nav-actions {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo a {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    .nav-actions {
+        gap: 10px;
+    }
+
+    .nav-action-btn {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
 .navbar .container {
     display: flex;
     justify-content: space-between;
