@@ -92,7 +92,7 @@ export default function CartDrawer() {
                                                 +
                                             </button>
                                         </div>
-                                        <span className="price">₦{(item.price * item.quantity).toLocaleString()}</span>
+                                        <span className="price">${(item.price * item.quantity).toLocaleString()}</span>
                                     </div>
                                     <button
                                         className="cart-item-remove"
@@ -110,7 +110,7 @@ export default function CartDrawer() {
                     <div className="drawer-footer">
                         <div className="summary-row">
                             <span className="label">Order Subtotal</span>
-                            <span className="value">₦{cartTotal.toLocaleString()}</span>
+                            <span className="value">${cartTotal.toLocaleString()}</span>
                         </div>
                         <p style={{ fontSize: '10px', color: 'var(--medium-text)', marginBottom: '25px', lineHeight: '1.4' }}>
                             Taxes and shipping calculated at checkout. Custom garment box shipping included.

@@ -149,7 +149,7 @@ const Catalog = () => {
                                     </div>
                                     <div className="catalog-info">
                                         <h3>{product.name}</h3>
-                                        <p className="price">₦{product.price.toLocaleString()}</p>
+                                        <p className="price">${product.price.toLocaleString()}</p>
                                     </div>
                                 </div>
                             ))}
@@ -197,7 +197,7 @@ const Catalog = () => {
                                 </div>
                                 <div className="product-sticky-info">
                                     <h2>{modalProduct.name}</h2>
-                                    <p className="price">₦{modalProduct.price.toLocaleString()}</p>
+                                    <p className="price">${modalProduct.price.toLocaleString()}</p>
                                     <div className="description">
                                         <p style={{ marginBottom: '10px', color: 'var(--accent-color)', fontSize: '10px', textTransform: 'uppercase', letterSpacing: '1px' }}>
                                             Atelier Reference: TM-{modalProduct.id.slice(0, 4).toUpperCase()}
@@ -225,7 +225,7 @@ const Catalog = () => {
                                             `Hi Tribesman! I'd like to order:\n\n` +
                                             `🧥 *${modalProduct.name}*\n` +
                                             `📏 Size: ${selectedSize}\n` +
-                                            `💰 Price: ₦${modalProduct.price.toLocaleString()}\n\n` +
+                                            `💰 Price: $${modalProduct.price.toLocaleString()}\n\n` +
                                             `Please let me know the next steps. Thank you!`
                                         )}`}
                                         target="_blank"
