@@ -21,7 +21,7 @@ const About = () => {
                     <div className="story-content" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.2fr)', gap: '60px', alignItems: 'center' }}>
                         <div ref={imgRef} className={`story-image reveal-scale ${imgVisible ? 'reveal-visible' : ''}`}>
                             <img
-                                src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&q=80&w=800"
+                                src="/agbada_wine_silk.png"
                                 alt="Tribesman Craftsmanship"
                                 style={{ width: '100%', height: 'auto', border: '1px solid var(--border-color)' }}
                             />
@@ -30,8 +30,9 @@ const About = () => {
                             <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '30px' }}>The Genesis of Elegance</h2>
                             <p style={{ marginBottom: '20px', fontSize: '14px', lineHeight: '1.8', color: 'var(--medium-text)' }}>
                                 Founded in the heart of Africa, TRIBESMAN emerged from a passion to redefine
-                                luxury menswear. We believe that true style honors heritage while embracing modern
-                                sophistication.
+                                luxury menswear. We specialize in elevating traditional African garments—such as 
+                                the Agbada, Senator, and Kaftan—for the modern gentleman. We believe that true 
+                                style honors heritage while embracing contemporary sophistication.
                             </p>
                             <p style={{ marginBottom: '20px', fontSize: '14px', lineHeight: '1.8', color: 'var(--medium-text)' }}>
                                 Every stitch is a testament to our commitment to excellence. We source the finest
