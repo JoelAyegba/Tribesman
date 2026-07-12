@@ -983,6 +983,29 @@ a {
     font-size: 15px;
 }
 
+/* Brand Story / About Page */
+.brand-story {
+    padding: 100px 0;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 60px;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .brand-story {
+        padding: 50px 0;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
 /* Contact Overriding */
 .contact {
     padding: 100px 0;
@@ -1208,4 +1231,239 @@ a {
 
 .reveal-clip-text.reveal-visible {
     transform: translateY(0);
+}
+
+/* ========================================
+   COMPREHENSIVE MOBILE RESPONSIVENESS
+   ======================================== */
+
+/* Hero section mobile refinements */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 80px;
+        padding-bottom: 40px;
+        min-height: auto;
+    }
+
+    .hero .container {
+        gap: 30px;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin-bottom: 15px;
+    }
+
+    .hero-subtitle {
+        font-size: 13px;
+        margin-bottom: 30px;
+        line-height: 1.7;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-buttons .btn,
+    .hero-buttons .btn-secondary {
+        text-align: center;
+        width: 100%;
+        padding: 14px 20px;
+    }
+}
+
+/* Page header mobile */
+@media (max-width: 768px) {
+    .page-header {
+        min-height: 280px;
+    }
+
+    .page-header-overlay h1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .page-header-overlay p {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+}
+
+/* Section title mobile */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+    }
+}
+
+/* Featured lookbook mobile */
+@media (max-width: 768px) {
+    .featured {
+        padding: 60px 0;
+    }
+
+    .featured-info h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Catalog filter mobile */
+@media (max-width: 768px) {
+    .category-filter {
+        gap: 10px;
+        margin: 30px 0 40px 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        font-size: 9px;
+        letter-spacing: 2px;
+        padding: 6px 12px;
+    }
+}
+
+/* Catalog grid mobile */
+@media (max-width: 768px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .catalog-info {
+        padding: 12px 0 0 0;
+    }
+
+    .catalog-info h3 {
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+
+    .catalog-info .price {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .catalog-img {
+        padding-top: 150%;
+    }
+}
+
+/* Catalog story section mobile */
+@media (max-width: 768px) {
+    .catalog-story {
+        padding: 50px 15px !important;
+        margin-top: 40px !important;
+    }
+
+    .catalog-story h2 {
+        font-size: 1.5rem !important;
+    }
+
+    .catalog-story p {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* Side drawer mobile */
+@media (max-width: 768px) {
+    .side-drawer {
+        max-width: 100% !important;
+        width: 100%;
+    }
+
+    .drawer-header {
+        padding: 20px;
+    }
+
+    .drawer-header h2 {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+    }
+
+    .drawer-body {
+        padding: 20px;
+    }
+
+    .product-sticky-info {
+        padding: 15px;
+    }
+
+    .product-sticky-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .product-sticky-info .price {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .product-sticky-info .description {
+        margin-bottom: 25px;
+        font-size: 12px;
+    }
+
+    .size-selector {
+        margin-bottom: 25px;
+    }
+
+    .size-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 10px;
+    }
+}
+
+/* Contact section mobile */
+@media (max-width: 768px) {
+    .contact {
+        padding: 60px 0;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .contact-info p {
+        font-size: 12px;
+    }
+}
+
+/* Footer mobile refinements */
+@media (max-width: 480px) {
+    .footer {
+        padding: 50px 0 30px 0;
+    }
+
+    .footer-logo a {
+        font-size: 1.3rem;
+        letter-spacing: 4px;
+    }
+}
+
+/* Buttons mobile */
+@media (max-width: 480px) {
+    .btn {
+        padding: 12px 24px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .btn-secondary {
+        padding: 12px 24px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
 }

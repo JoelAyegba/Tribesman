@@ -16,9 +16,9 @@ const About = () => {
                 </div>
             </section>
 
-            <section className="brand-story" style={{ padding: '100px 0' }}>
+            <section className="brand-story">
                 <div className="container">
-                    <div className="story-content" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.2fr)', gap: '60px', alignItems: 'center' }}>
+                    <div className="story-grid">
                         <div ref={imgRef} className={`story-image reveal-scale ${imgVisible ? 'reveal-visible' : ''}`}>
                             <img
                                 src="/agbada_wine_silk.png"
